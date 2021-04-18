@@ -1,34 +1,20 @@
 import React, { Component} from "react";
 import {Container, ListGroup, ListGroupItem, Button} from "reactstrap";
-import { v4 as uuid } from 'uuid';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "../App.css";
+import { connect } from "react-redux";
 
 class HamsterList extends Component{
-  state = {
-    hamsters: [
-      {id: uuid(), name: "Hakmook"},
-      {id: uuid(), name: "Toto"},
-      {id: uuid(), name: "Kitty"},
-      {id: uuid(), name: "Sameer"},
-      {id: uuid(), name: "Misho"},
-    ]
-  }
 
   render() {
-    let hamsters = this.state.hamsters;
+    let hamsters = this.props.hamsters;
     return(
       <Container>
         <h2>Hamster List</h2>
+
         <Button color="dark" style={{margin: "30px 0" }}
           onClick={()=> {
-            const name = prompt("Add New Item");
-            if(name){
-              this.setState({
-                hamsters: [...this.state.hamsters, {id: uuid(), name: name}]
-              })
-            }
-
+            const name = prompt("Add New Item")
           }}
         >Add New Hamster</Button>
 
@@ -42,11 +28,6 @@ class HamsterList extends Component{
                     className="remove-btn"
                     color="danger"
                     size="sm"
-                    onClick={() =>
-                      this.setState({
-                        hamsters: this.state.hamsters.filter(item => item.id !== hamster.id)
-                      })
-                    }
                   >
                     &times;
                   </Button>
@@ -60,4 +41,11 @@ class HamsterList extends Component{
   }
 }
 
-export default HamsterList;
+const mapStateToProps = (state) => {
+  return {
+    counter: state.counter,
+    hamsters: state.hamsters
+  }
+}
+
+export default connect(mapStateToProps)(HamsterList);
