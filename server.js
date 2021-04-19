@@ -5,10 +5,12 @@ const router = require('./routes/api');
 
 const app = express();
 
+
 app.use(bodyParser.json());
 
+
 // connection to the DB -------------------------------------------------
-const DBconnection =
+const DBconnection =  //('mongodb://localhost/dbName');   in case local db
   "mongodb+srv://ahmed:boats1105@cluster0.opieo.mongodb.net/HAMSTERSWARS?retryWrites=true&w=majority";
 mongoose
   .connect(DBconnection, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -22,4 +24,5 @@ mongoose
     console.log(err);
   });
 
-  app.use(router);
+
+app.use("/api/hamsters", router);
