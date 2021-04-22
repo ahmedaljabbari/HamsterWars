@@ -10,6 +10,15 @@ router.get('/', (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.get("/:id", (req, res) =>{
+  const id = req.params.id;
+  Hamster.findById(id).then((item) => {
+    console.log(item)
+    res.json(item)
+  })
+  .catch(err => console.log(err))
+})
+
 
 router.post('/', (req, res) => {
   Hamster.create(req.body)

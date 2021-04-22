@@ -1,10 +1,9 @@
 import { createStore } from "redux";
-import axios from "axios";
-//import { v4 as uuid } from 'uuid';
 
 const initialState = {
   counter: 22,
-  hamsters: []
+  hamsters: [],
+  loading: true
 }
 
 const reducers = (state, action) => {
@@ -13,7 +12,8 @@ const reducers = (state, action) => {
       
       return {
         ...state,
-        hamsters: action.payload
+        loading: false,
+        hamsters: action.payload,
       }
 
     case "INCREASE":

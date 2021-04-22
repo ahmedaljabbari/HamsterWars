@@ -1,0 +1,27 @@
+.card_container{
+  box-sizing: border-box;
+  display: grid;
+  width: 700px;
+  min-height: 400px;
+  padding: 5px;
+  border: lightgray solid 1.5px;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 50% 50%;
+  margin: 50px auto;
+
+}
+
+.card_container .title_section{
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.card_container > img {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 5px;
+}
+
+h5{
+  background-color: limegreen;
+}

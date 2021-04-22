@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 .fade-enter{
   opacity: 0.01;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 .fade-enter-active{
   opacity: 1;
-  transition: opacity 1000ms ease-in;
+  transition: opacity 500ms ease-in;
 }
 .fade-exit{
   opacity: 1;
@@ -19,4 +24,52 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+ .routerLink{
+   color: lightgray;
+   text-decoration: none;
+ }
+ .routerLink:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.homePage_Container{
+  text-align: center;
+}
+
+.homeLogo{
+  box-sizing: border-box;
+  width: 80%;
+  height: 250px;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  margin: 40px auto;
+  margin-bottom: 80px ;
+
+}
+
+.homeLogo img {
+  height: 100%;
+}
+
+.titleBox{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+
+#cutie{
+  font-family: 'Nothing You Could Do', cursive;
+  font-weight: bold;
+  color: tomato;
+}
+
+h3{
+  
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+  word-wrap: none;
 }

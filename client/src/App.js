@@ -4,11 +4,12 @@ import AppNavbar from "./components/AppNavbar";
 import {Provider} from 'react-redux';
 import {Container /*, ListGroup, ListGroupItem, Button*/} from "reactstrap";
 import Uniqe from "./components/uniqeHamster";
+import Home from "./pages/home";
 
 import Store from "./store";
 //import { useState } from "react";
-import HamsterList from "./components/HamstersList";
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+//import HamsterList from "./components/HamstersList";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <div className="App">
           <AppNavbar />
           <Container>
-            <Route path="/" component={HamsterList} exact ></Route>
+            <Route path="/" component={Home} exact ></Route>
             <Route path="/api/hamsters/:id" component={Uniqe} exact ></Route>
           </Container>
         </div>

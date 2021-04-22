@@ -3,11 +3,15 @@ import {ListGroup, ListGroupItem, Button} from "reactstrap";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "../App.css";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { Spinner } from 'reactstrap';
+
+//import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 
 class HamsterList extends Component{
+
 
   componentDidMount(){
     this.props.getItems();
@@ -19,19 +23,18 @@ class HamsterList extends Component{
     return(
       <div>
         <h2>Hamster List</h2>
+        {this.props.loading ? <div style={{position: "fixed", right:"50%"}}><Spinner color="info" /></div> :""}
 
         <Button color="dark" style={{margin: "30px 0" }}
-          onClick={()=> {
-            const name = prompt("Add New Item")
-          }}
         >Add New Hamster</Button>
 
         <ListGroup>
           <TransitionGroup>
             {hamsters.map(hamster => {
-              return (<CSSTransition key={hamster.id} classNames="fade" timeout={500}>
-                <ListGroupItem className="Listo" style={{display: "flex"}} tag="a" href={'/api/hamsters/'+hamster._id} action>
-                  <span>{hamster.name}</span>
+              return (<CSSTransition key={hamster.id} classNames="fade" timeout={100}>
+                <Link to={'/api/hamsters/' + hamster._id} className="routerLink">
+                <ListGroupItem className="Listo" style={{display: "flex"}} tag="div" action>
+                  <b>{hamster.name}</b>
                   <Button
                     className="remove-btn"
                     color="danger"
@@ -40,6 +43,7 @@ class HamsterList extends Component{
                     &times;
                   </Button>
                 </ListGroupItem>
+                </Link>
               </CSSTransition>)
             })}
           </TransitionGroup>
@@ -57,21 +61,22 @@ class HamsterList extends Component{
 const mapStateToProps = (state) => {
   return {
     counter: state.counter,
-    hamsters: state.hamsters
+    hamsters: state.hamsters,
+    loading: state.loading
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getItems: () => {
-        {axios.get('/api/hamsters')
+        axios.get('/api/hamsters')
           .then(res => {
             dispatch({
               type: "GET_HAMSTERS",
               payload: res.data
             })
             console.log("_________________________________________________", res.data);
-          })}
+          })
       },
     increase: () => {dispatch({type: "INCREASE"})},
     decrease: () => {dispatch({type: "DECREASE"})},

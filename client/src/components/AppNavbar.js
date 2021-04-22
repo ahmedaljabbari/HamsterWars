@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -7,12 +8,8 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
-} from 'reactstrap';
+} from "reactstrap";
+import "../App.css";
 
 const AppNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,42 +18,27 @@ const AppNavbar = (props) => {
 
   return (
     <div>
-      <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">Hamsters</NavbarBrand>
+      <Navbar color="dark" dark expand="md" id="navo">
+        <NavbarBrand tag="div">
+          <Link to="/" className="routerLink">
+            <img src="/mylogo.png" style={{ height: "40px" }}></img> Hamsters
+          </Link>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Battle</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">State</NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
           </Nav>
-          <NavItem style={{color: "white", listStyle: "none", cursor: "pointer"}}>
-            Add Hamster
+          <NavItem
+            style={{ color: "white", listStyle: "none", cursor: "pointer" }}
+          >
+            <Link className="routerLink" to="/upload">
+              Add Hamster
+            </Link>
           </NavItem>
         </Collapse>
       </Navbar>
     </div>
   );
-}
+};
 
 export default AppNavbar;
