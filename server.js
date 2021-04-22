@@ -24,5 +24,8 @@ mongoose
     console.log(err);
   });
 
+mongoose.set('useFindAndModify', false);
 
-app.use("/api/hamsters", router);
+
+app.use(router);
+//app.use("/api/hamsters", router);

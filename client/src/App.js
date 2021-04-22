@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import {Container /*, ListGroup, ListGroupItem, Button*/} from "reactstrap";
 import Uniqe from "./components/uniqeHamster";
 import Home from "./pages/home";
+import Battle from "./pages/Battle";
 
 import Store from "./store";
 //import { useState } from "react";
@@ -21,6 +22,7 @@ function App() {
           <Container>
             <Route path="/" component={Home} exact ></Route>
             <Route path="/api/hamsters/:id" component={Uniqe} exact ></Route>
+            <Route path="/battle" component={Battle} exact ></Route>
           </Container>
         </div>
       </Provider>

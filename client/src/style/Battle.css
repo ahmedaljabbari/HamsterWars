@@ -1,0 +1,35 @@
+.battle_section{
+  width: 700px;
+  margin: 30px auto;
+  min-height: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ham_id{
+  height: 380px;
+  width: 300px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
+
+.ham_id:hover{
+  cursor: pointer;
+  background-color: lightskyblue;
+}
+
+.ham_id img{
+  max-height: 300px;
+  max-width: 300px;
+}
+
+h4{
+  padding-top: 20px;
+  text-align: center;
+}
