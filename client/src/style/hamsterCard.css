@@ -6,7 +6,7 @@
   padding: 5px;
   border: lightgray solid 1.5px;
   grid-template-columns: 40% 60%;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 70% 30%;
   margin: 50px auto;
 
 }
@@ -20,6 +20,7 @@
   box-sizing: border-box;
   width: 100%;
   border-radius: 5px;
+  max-height: 100%;
 }
 
 h5{

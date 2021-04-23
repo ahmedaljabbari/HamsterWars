@@ -1,8 +1,7 @@
 import { React, Component } from "react";
 import axios from "axios";
 import "../style/hamsterCard.css";
-import { Table } from 'reactstrap';
-import { Spinner } from 'reactstrap';
+import { Table, Spinner } from 'reactstrap';
 
 
 class Uniqe extends Component {
@@ -16,7 +15,7 @@ class Uniqe extends Component {
     
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/') + 1);
-    axios.get(`/api/hamsters/${id}`)
+    axios.get(`/hamsters/${id}`)
     .then(res => {
       this.setState({
         loading: false,

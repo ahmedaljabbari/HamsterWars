@@ -21,7 +21,7 @@ function App() {
           <AppNavbar />
           <Container>
             <Route path="/" component={Home} exact ></Route>
-            <Route path="/api/hamsters/:id" component={Uniqe} exact ></Route>
+            <Route path="/hamsters/:id" component={Uniqe} exact ></Route>
             <Route path="/battle" component={Battle} exact ></Route>
           </Container>
         </div>

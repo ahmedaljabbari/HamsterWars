@@ -1,6 +1,7 @@
 .battle_section{
   width: 700px;
   margin: 30px auto;
+  margin-bottom: 10px;
   min-height: 400px;
   display: flex;
   justify-content: space-between;
@@ -32,4 +33,9 @@
 h4{
   padding-top: 20px;
   text-align: center;
+}
+
+#btn_nextBattle{
+  display: flex;
+  justify-content: center;
 }
