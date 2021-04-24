@@ -42,7 +42,7 @@ class Battle extends Component {
       loserDefeats = this.state.hamsters[0].defeats;
     }
     axios({
-      method: "put",
+      method: "post",
       url: "/battle",
       data: {
         name: name,
@@ -84,7 +84,7 @@ class Battle extends Component {
                   hamster._id
                 )}
               >
-                <img src={"/assets/" + hamster.imgName}></img>
+                <img src={"/assets/" + hamster.imgName} alt={hamster.imgName}></img>
                 <h4>{hamster.name}</h4>
               </div>
             );

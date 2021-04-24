@@ -30,6 +30,9 @@ const AppNavbar = (props) => {
             <NavItem>
               <Link className="routerLink" to="/stats">Statics</Link>
             </NavItem>
+            <NavItem>
+              <Link className="routerLink" to="/hamster">Hamster</Link>
+            </NavItem>
           </Nav>
           <NavItem
             style={{ color: "white", listStyle: "none", cursor: "pointer" }}

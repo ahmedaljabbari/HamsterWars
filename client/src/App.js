@@ -8,6 +8,7 @@ import Home from "./pages/home";
 import Battle from "./pages/Battle";
 import Upload from "./pages/Upload";
 import Statics from "./pages/Statics";
+import RandomHamster from "./pages/RandomHamster";
 
 import Store from "./store";
 //import { useState } from "react";
@@ -27,6 +28,7 @@ function App() {
             <Route path="/battle" component={Battle} exact ></Route>
             <Route path="/upload" component={Upload} exact ></Route>
             <Route path="/stats" component={Statics} exact ></Route>
+            <Route path="/hamster" component={RandomHamster} exact ></Route>
           </Container>
         </div>
       </Provider>

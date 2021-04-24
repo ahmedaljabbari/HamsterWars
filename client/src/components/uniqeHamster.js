@@ -30,8 +30,9 @@ class Uniqe extends Component {
       <div>
       {this.state.loading ? <div style={{position: "fixed", right:"50%"}}><Spinner color="info" /></div> : ''}
 
+      <h3 id="vinnaren">Winner</h3>
       <div className="card_container">
-        <img src={"/assets/" + this.state.hamster.imgName} alt="Dator" width="300"></img>
+        <img src={"/assets/" + this.state.hamster.imgName} alt={this.state.hamster.imgName} width="300"></img>
         <div className="title_section">
           <h1>{this.state.hamster.name}</h1>
           <Table size="sm">

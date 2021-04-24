@@ -28,7 +28,7 @@ router.get("/battle", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.put("/battle", (req, res) => {
+router.post("/battle", (req, res) => {
   const id = req.body.id;
   console.log("loser ===>  " + req.body.loser);
   console.log("winner ===>  " + req.body.name);
@@ -93,14 +93,35 @@ router.post("/upload", (req, res) => {
   })
 })
 
+router.get("/hamster", (req, res) => {
+  Hamster.find().then((items) => {
+    let id = Math.floor(Math.random() * items.length)
+    const pickedItem = items[id]
+    res.json(pickedItem);
+  })
+  .catch((err) => console.log(err))
+})
 
-router.delete("/:id", (req, res) => {
-  const id = req.params.id;
-  console.log(id);
-  Hamster.findByIdAndDelete(id).then((hamster) => {
-    console.log(hamster);
-    res.json(hamster);
+router.get('/stats', (req, res) => {
+  Hamster.find().then((items) => {
+    let totalGames = 0;
+    for (let index = 0; index < items.length; index++) {
+      totalGames = totalGames + items[index].games;
+    }
+    const topWinners = items.sort(function (a, b) {
+      return b.wins -  a.wins;
+    }).slice(0, 2)
+
+    const topLosers = items.sort(function (a, b) {
+      return b.defeats -  a.defeats;
+    }).slice(0, 2)
+
+    const response = [totalGames, topWinners, topLosers]
+
+    console.log(totalGames)
+    res.json(response)
   });
-});
+})
+
 
 module.exports = router;
