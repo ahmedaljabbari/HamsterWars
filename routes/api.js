@@ -110,11 +110,11 @@ router.get('/stats', (req, res) => {
     }
     const topWinners = items.sort(function (a, b) {
       return b.wins -  a.wins;
-    }).slice(0, 2)
+    }).slice(0, 5)
 
     const topLosers = items.sort(function (a, b) {
       return b.defeats -  a.defeats;
-    }).slice(0, 2)
+    }).slice(0, 5)
 
     const response = [totalGames, topWinners, topLosers]
 

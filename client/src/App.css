@@ -120,9 +120,10 @@ text-decoration: none;
   }
 
   .homeLogo{
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   .titleBox{
+    height: 150px;
     align-items: center;
   }
 

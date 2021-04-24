@@ -1,0 +1,28 @@
+.stats_container{
+  margin-top: 40px;
+}
+
+#tables_container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats_tables{
+width: 45%;
+}
+
+.stats_tables thead tr{
+  color: tomato;
+}
+
+@media (max-width: 600px) {  
+  #tables_container{
+    flex-direction: column;
+  }
+
+  .stats_tables{
+    width: 100%;
+    margin-bottom: 30px;
+    }
+}
