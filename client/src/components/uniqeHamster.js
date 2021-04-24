@@ -16,7 +16,7 @@ class Uniqe extends Component {
     
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/') + 1);
-    axios.get(`/hamsters/${id}`)
+    axios.get(`/result/${id}`)
     .then(res => {
       this.setState({
         loading: false,

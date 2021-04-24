@@ -55,7 +55,7 @@ class Battle extends Component {
     }).then(() => {
       console.log("loser )> " + loser);
       console.log("winner )> " + name);
-      this.props.history.push(`/hamsters/${ID}`);
+      this.props.history.push(`/result/${ID}`);
     })
   };
 

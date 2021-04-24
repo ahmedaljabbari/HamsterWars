@@ -81,9 +81,56 @@ text-decoration: none;
   color: tomato;
 }
 
-h3{
-  
+.titleBox h3{
   font-family: 'Indie Flower', cursive;
   font-weight: bold;
   word-wrap: none;
+}
+
+.box_navigation{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.app_navigation{
+  color: white;
+  background-color: #343A40;
+  padding: 10px 20px;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+.app_navigation:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {  
+
+  .LogoLink img , .homeLogo img{
+    display: none;
+  }
+
+  .homeLogo{
+    margin-bottom: 10px;
+  }
+  .titleBox{
+    align-items: center;
+  }
+
+  .box_navigation{
+    flex-direction: column;
+  }
+
+  .app_navigation{
+    margin-bottom: 30px;
+  }
 }

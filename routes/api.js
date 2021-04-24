@@ -65,7 +65,7 @@ router.put("/battle", (req, res) => {
   res.end();
 });
 
-router.get("/hamsters/:id", (req, res) => {
+router.get("/result/:id", (req, res) => {
   const id = req.params.id;
   Hamster.findById(id)
     .then((item) => {
