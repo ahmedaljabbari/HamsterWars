@@ -6,6 +6,8 @@ import {Container /*, ListGroup, ListGroupItem, Button*/} from "reactstrap";
 import Uniqe from "./components/uniqeHamster";
 import Home from "./pages/home";
 import Battle from "./pages/Battle";
+import Upload from "./pages/Upload";
+import Statics from "./pages/Statics";
 
 import Store from "./store";
 //import { useState } from "react";
@@ -23,6 +25,8 @@ function App() {
             <Route path="/" component={Home} exact ></Route>
             <Route path="/hamsters/:id" component={Uniqe} exact ></Route>
             <Route path="/battle" component={Battle} exact ></Route>
+            <Route path="/upload" component={Upload} exact ></Route>
+            <Route path="/stats" component={Statics} exact ></Route>
           </Container>
         </div>
       </Provider>

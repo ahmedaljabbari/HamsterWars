@@ -1,6 +1,6 @@
 import { React, Component } from "react";
 import axios from "axios";
-import { Spinner, Button } from "reactstrap";
+import { Spinner } from "reactstrap";
 import "../style/Battle.css";
 //import { Link } from "react-router-dom";
 
@@ -90,8 +90,8 @@ class Battle extends Component {
             );
           })}
         </section>
-        <div id="btn_nextBattle">
-          <Button color="success" onClick={this.nextBattle}>Next Battle</Button>
+        <div>
+          <span id="btn_nextBattle" color="success" onClick={this.nextBattle}>Next Battle</span>
         </div>
       </div>
     );

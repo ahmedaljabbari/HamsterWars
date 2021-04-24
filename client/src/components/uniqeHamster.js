@@ -2,6 +2,7 @@ import { React, Component } from "react";
 import axios from "axios";
 import "../style/hamsterCard.css";
 import { Table, Spinner } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 
 class Uniqe extends Component {
@@ -75,6 +76,7 @@ class Uniqe extends Component {
           </tbody>
         </Table>
       </div>
+          <Link to="/battle" id="btn_newBattle">New Battle</Link>
       </div>
     )
   }

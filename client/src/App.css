@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+#myNav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: goldenrod;
+}
 .fade-enter{
   opacity: 0.01;
 }
@@ -25,13 +33,22 @@
   justify-content: space-between;
   align-items: center;
 }
- .routerLink{
-   color: lightgray;
-   text-decoration: none;
- }
- .routerLink:hover{
-  color: white;
+
+.LogoLink{
+ color: white;
+ font-weight: bold;
+ margin-right: 100px;
+}
+
+
+.routerLink{
+  color: lightgray;
   text-decoration: none;
+  margin-right: 40px;
+}
+.routerLink:hover , .LogoLink:hover{
+color: white;
+text-decoration: none;
 }
 
 .homePage_Container{
@@ -40,25 +57,22 @@
 
 .homeLogo{
   box-sizing: border-box;
-  width: 80%;
-  height: 250px;
-  display: grid;
-  grid-template-columns: 35% 65%;
   margin: 40px auto;
-  margin-bottom: 80px ;
-
 }
 
 .homeLogo img {
-  height: 100%;
+  width: 300px;
+  float: left;
+  max-height: 320px;
+  margin-right: 20px;
 }
 
 .titleBox{
   display: flex;
-  justify-content: center;
+  height: 320px;
   flex-direction: column;
   align-items: flex-start;
-  white-space: nowrap;
+  justify-content: center;
 }
 
 #cutie{

@@ -4,10 +4,8 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
+  NavItem
 } from "reactstrap";
 import "../App.css";
 
@@ -19,14 +17,19 @@ const AppNavbar = (props) => {
   return (
     <div>
       <Navbar color="dark" dark expand="md" id="navo">
-        <NavbarBrand tag="div">
-          <Link to="/" className="routerLink">
-            <img src="/mylogo.png" style={{ height: "40px" }}></img> Hamsters
-          </Link>
-        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
+            <NavItem>
+              <Link className="LogoLink" to="/">
+                <img src="/logooo.png" style={{width:"40px"}}></img> HamsterWars</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="routerLink" to="/battle">Battles</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="routerLink" to="/stats">Statics</Link>
+            </NavItem>
           </Nav>
           <NavItem
             style={{ color: "white", listStyle: "none", cursor: "pointer" }}

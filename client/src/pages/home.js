@@ -1,5 +1,4 @@
 import { React, Component } from "react";
-import { Button, ButtonGroup } from 'reactstrap';
 import { Link } from "react-router-dom";
 
 
@@ -19,19 +18,6 @@ class Home extends Component{
           </div>
         </div>
 
-        <ButtonGroup size="lg">
-          <Button color="dark" style={{width: "200px"}}>
-            <Link to="/battle" className="routerLink">Battle</Link>
-          </Button>
-          <Button color="dark" style={{width: "200px"}}>
-            <Link to="/upload" className="routerLink">Add Hamster</Link>
-          </Button>
-          <Button color="dark" style={{width: "200px"}}>
-            <Link to="/stats" className="routerLink">Statics</Link>
-          </Button>
-          
-
-        </ButtonGroup>        
       </div>
     )
   }
