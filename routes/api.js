@@ -75,12 +75,24 @@ router.get("/hamsters/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.post("/", (req, res) => {
-  Hamster.create(req.body).then((hamster) => {
+
+router.post("/upload", (req, res) => {
+  var age = parseInt(req.body.age);
+  Hamster.create({
+    name:req.body.name,
+    age: age,
+    favFood: req.body.favFood,
+    loves: req.body.loves,
+    wins: 0,
+    games: 0,
+    defeats: 0,
+    imgName: req.body.name + ".jpg"
+  }).then((hamster) => {
     console.log(hamster);
-    res.json(hamster);
-  });
-});
+    res.json(hamster)
+  })
+})
+
 
 router.delete("/:id", (req, res) => {
   const id = req.params.id;
