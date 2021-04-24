@@ -52,7 +52,7 @@ class Uniqe extends Component {
             </tbody>
           </Table>
         </div>
-        <Table size="sm">
+        <Table size="sm" className="hamster-info-table">
           <thead>
             <tr>
               <th>Favorite food</th>
@@ -64,7 +64,7 @@ class Uniqe extends Component {
             </tr>
           </tbody>
         </Table>
-        <Table size="sm">
+        <Table size="sm" className="hamster-info-table">
           <thead>
             <tr>
               <th>Hobbies</th>

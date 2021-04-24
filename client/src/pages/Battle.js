@@ -62,7 +62,7 @@ class Battle extends Component {
   render() {
     return (
       <div>
-        <h4>Pick a cutie</h4>
+        <h4>Pick a Cutie</h4>
         {this.state.loading ? (
           <div style={{ position: "fixed", right: "50%" }}>
             <Spinner color="info" />
