@@ -116,7 +116,7 @@ router.get('/stats', (req, res) => {
       return b.defeats -  a.defeats;
     }).slice(0, 5)
 
-    const response = [totalGames, topWinners, topLosers]
+    const response = [Math.floor(totalGames/2), topWinners, topLosers]
 
     console.log(totalGames)
     res.json(response)
