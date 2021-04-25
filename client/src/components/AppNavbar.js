@@ -22,7 +22,7 @@ const AppNavbar = (props) => {
           <Nav className="mr-auto" navbar>
             <NavItem>
               <Link className="LogoLink" to="/">
-                <img src="/logooo.png" style={{width:"40px"}}></img> HamsterWars</Link>
+                <img src="/logooo.png" style={{width:"40px"}} alt="logo"></img> HamsterWars</Link>
             </NavItem>
             <NavItem>
               <Link className="routerLink" to="/battle">Battles</Link>
