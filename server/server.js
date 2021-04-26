@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const router = require('./routes/api');
 const path = require('path');
+const Hamster = require('./model/Hamster');
 
 const app = express();
 
@@ -22,22 +23,42 @@ mongoose
     console.log(err);
   }); 
 
-  app.listen(process.env.port || 5000, () => {
+  const port = process.env.PORT || 1337; 
+
+  app.listen(port, () => {
     console.log("listening ok");
   });
 
 mongoose.set('useFindAndModify', false);
 
+app.use(express.static(__dirname + '/../build'));
 
-app.use(router);
+app.get("/", (req, res) => {
+  Hamster.find()
+    .sort({ createdAt: -1 })
+    .then((items) => res.json(items))
+    .catch((err) => console.log(err));
+});
+
+
+app.get("/hamster", (req, res) => {
+  Hamster.find().then((items) => {
+    let id = Math.floor(Math.random() * items.length)
+    const pickedItem = items[id]
+    res.json(pickedItem);
+  })
+  .catch((err) => console.log(err))
+})
+
+app.use("/api", router);
 //app.use("/api/hamsters", router);
 
 //Serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
-  //set static folder
-  app.use(express.static('client/public'));
+// if (process.env.NODE_ENV === 'production') {
+//   //set static folder
+//   app.use(express.static('client/public'));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  })
-}
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//   })
+// }

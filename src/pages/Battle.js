@@ -11,7 +11,7 @@ class Battle extends Component {
   };
 
   componentDidMount() {
-    axios.get("/battle").then((res) => {
+    axios.get("/api/battle").then((res) => {
       this.setState({
         loading: false,
         hamsters: res.data,
@@ -20,7 +20,7 @@ class Battle extends Component {
   }
 
   nextBattle = () => {
-    axios.get("/battle").then((res) => {
+    axios.get("/api/battle").then((res) => {
       this.setState({
         loading: false,
         hamsters: res.data,
@@ -43,7 +43,7 @@ class Battle extends Component {
     }
     axios({
       method: "post",
-      url: "/battle",
+      url: "/api/battle",
       data: {
         name: name,
         wins: wins + 1,
@@ -55,7 +55,7 @@ class Battle extends Component {
     }).then(() => {
       console.log("loser )> " + loser);
       console.log("winner )> " + name);
-      this.props.history.push(`/result/${ID}`);
+      this.props.history.push(`/api/result/${ID}`);
     })
   };
 

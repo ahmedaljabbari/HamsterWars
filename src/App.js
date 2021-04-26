@@ -24,11 +24,11 @@ function App() {
           <AppNavbar />
           <Container>
             <Route path="/" component={Home} exact ></Route>
-            <Route path="/result/:id" component={Uniqe} exact ></Route>
-            <Route path="/battle" component={Battle} exact ></Route>
-            <Route path="/upload" component={Upload} exact ></Route>
-            <Route path="/stats" component={Statics} exact ></Route>
-            <Route path="/hamster" component={RandomHamster} exact ></Route>
+            <Route path="/api/result/:id" component={Uniqe} exact ></Route>
+            <Route path="/api/battle" component={Battle} exact ></Route>
+            <Route path="/api/upload" component={Upload} ></Route>
+            <Route path="/api/stats" component={Statics} exact ></Route>
+            <Route path="/hamster" component={RandomHamster} exact></Route>
           </Container>
         </div>
       </Provider>

@@ -1,14 +1,6 @@
 const express = require("express");
-
 const router = express.Router();
 const Hamster = require("../model/Hamster");
-
-router.get("/", (req, res) => {
-  Hamster.find()
-    .sort({ createdAt: -1 })
-    .then((items) => res.json(items))
-    .catch((err) => console.log(err));
-});
 
 router.get("/battle", (req, res) => {
   Hamster.find()
@@ -93,14 +85,6 @@ router.post("/upload", (req, res) => {
   })
 })
 
-router.get("/hamster", (req, res) => {
-  Hamster.find().then((items) => {
-    let id = Math.floor(Math.random() * items.length)
-    const pickedItem = items[id]
-    res.json(pickedItem);
-  })
-  .catch((err) => console.log(err))
-})
 
 router.get('/stats', (req, res) => {
   Hamster.find().then((items) => {

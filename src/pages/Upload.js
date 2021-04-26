@@ -9,7 +9,9 @@ class Upload extends Component {
     modal: false
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    
+  }
 
   toggle = () => this.setState({
     modal: !this.state.modal
@@ -18,7 +20,7 @@ class Upload extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    axios.post("/upload", {
+    axios.post("/api/upload", {
       name: data.get('name'),
       age: data.get('age'),
       favFood: data.get('favFood'),

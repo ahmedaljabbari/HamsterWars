@@ -10,7 +10,7 @@ class Statics extends Component {
   };
 
   componentDidMount() {
-    axios.get("/stats").then((res) => {
+    axios.get("/api/stats").then((res) => {
       this.setState({
         myData: res.data,
         loading: false,

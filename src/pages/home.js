@@ -18,9 +18,9 @@ class Home extends Component{
             <h1 id="cutie">The Cutie</h1>
           </div>
           <div className="box_navigation">
-            <Link to="/battle" className="app_navigation">Battles</Link>
-            <Link to="/upload" className="app_navigation">Add Hamster</Link>
-            <Link to="stats" className="app_navigation">Statics</Link>
+            <Link to="/api/battle" className="app_navigation">Battles</Link>
+            <Link to="/api/upload" className="app_navigation">Add Hamster</Link>
+            <Link to="/api/stats" className="app_navigation">Statics</Link>
           </div>
         </div>
 

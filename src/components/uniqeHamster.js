@@ -16,7 +16,7 @@ class Uniqe extends Component {
     
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/') + 1);
-    axios.get(`/result/${id}`)
+    axios.get(`/api/result/${id}`)
     .then(res => {
       this.setState({
         loading: false,
@@ -77,7 +77,7 @@ class Uniqe extends Component {
           </tbody>
         </Table>
       </div>
-          <Link to="/battle" id="btn_newBattle">New Battle</Link>
+          <Link to="/api/battle" id="btn_newBattle">New Battle</Link>
       </div>
     )
   }

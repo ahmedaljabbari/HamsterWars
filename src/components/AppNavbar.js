@@ -25,10 +25,10 @@ const AppNavbar = (props) => {
                 <img src="/logooo.png" style={{width:"40px"}} alt="logo"></img> HamsterWars</Link>
             </NavItem>
             <NavItem>
-              <Link className="routerLink" to="/battle">Battles</Link>
+              <Link className="routerLink" to="/api/battle">Battles</Link>
             </NavItem>
             <NavItem>
-              <Link className="routerLink" to="/stats">Statics</Link>
+              <Link className="routerLink" to="/api/stats">Statics</Link>
             </NavItem>
             <NavItem>
               <Link className="routerLink" to="/hamster">Hamster</Link>
@@ -37,7 +37,7 @@ const AppNavbar = (props) => {
           <NavItem
             style={{ color: "white", listStyle: "none", cursor: "pointer" }}
           >
-            <Link className="routerLink" to="/upload">
+            <Link className="routerLink" to="/api/upload">
               Add Hamster
             </Link>
           </NavItem>
