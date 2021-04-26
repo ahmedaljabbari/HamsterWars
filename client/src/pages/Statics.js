@@ -68,7 +68,7 @@ class Statics extends Component {
                   <tr>
                     <th scope="row">{index + 1}</th>
                     <td>{item.name}</td>
-                    <td>{item.wins}</td>
+                    <td>{item.defeats}</td>
                   </tr>
                 );
               })}
